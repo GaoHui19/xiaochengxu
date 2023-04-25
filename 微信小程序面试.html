@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    details {
+      width: calc(50% - 10px);
+      background-color: #f3f3f3;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      box-sizing: border-box;
+      margin-bottom: 20px;
+    }
+
+    details summary {
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container ">
+    <details>
+      <summary>1. 简单描述下微信小程序的相关文件类型？</summary>
+
+
+      参考答案：微信小程序项目结构主要有四个文件类型, 如下
+
+      一. WXML （WeiXin Markup Language）是框架设计的一套标签语言，结合基础组件. 事件系统，可以构建出页面的结构。内部主要是微信自己定义的一套组件。
+
+      二. WXSS (WeiXin Style Sheets)是一套样式语言，用于描述 WXML 的组件样式，
+
+      三.js 逻辑处理，网络请求
+
+      四.json 小程序设置，如页面注册，页面标题及tabBar。
+
+    </details>
+
+
+    <details>
+      <summary>2. 你是怎么封装微信小程序的数据请求的？</summary>
+
+
+      参考答案：
+
+      一. 将所有的接口放在统一的js文件中并导出
+
+      二. 在app. js中创建封装请求数据的方法
+
+      三. 在子页面中调用封装的方法请求数据
+
+    </details>
+
+
+    <details>
+      <summary>3. 有哪些参数传值的方法？</summary>
+
+
+      参考答案：
+
+      一. 给HTML元素添加data-\*属性来传递我们需要的值，然后通过e. currentTarget. dataset或onload的param参数获取。但data-名称不能有大写字母和不可以存放对象
+
+      二. 设置id 的方法标识来传值通过e. currentTarget. id获取设置的id的值, 然后通过设置全局对象的方式来传递数值
+
+      三. 在navigator中添加参数传值
+
+    </details>
+
+
+    <details>
+      <summary>4. 你使用过哪些方法，来提高微信小程序的应用速度？</summary>
+
+
+      参考答案：
+
+      一. 提高页面加载速度
+
+      二. 用户行为预测
+
+      三. 减少默认data的大小
+
+      四. 组件化方案
+
+    </details>
+
+
+    <details>
+      <summary>5. 小程序与原生App哪个好？</summary>
+
+
+      参考答案：
+
+      小程序除了拥有公众号的低开发成本. 低获客成本低以及无需下载等优势，在服务请求延时与用户使用体验是都得到了较大幅度 的提升，使得其能够承载跟复杂的服务功能以及使用户获得更好的用户体验
+
+    </details>
+
+
+    <details>
+      <summary>6. 简述微信小程序原理？</summary>
+
+
+      参考答案：
+      <p> 微信小程序采用JavaScript. WXML. WXSS三种技术进行开发，从技术讲和现有的前端开发差不多，但深入挖掘的话却又有所不同。</p>
+      <p>JavaScript：首先JavaScript的代码是运行在微信App中的，并不是运行在浏览器中，因此一些H5技术的应用，需要微信App提供对应的API支持，而这限制住了H5技术的应用，且其不能称为严格的H5，可以称其为伪H5，同理，微信提供的独有的某些API，H5也不支持或支持的不是特别好。</p>
+      <p>WXML：WXML微信自己基于XML语法开发的，因此开发时，只能使用微信提供的现有标签，HTML的标签是无法使用的。</p>
+      <p>WXSS：WXSS具有CSS的大部分特性，但并不是所有的都支持，而且支持哪些，不支持哪些并没有详细的文档。</p>
+     <p> 微信的架构，是数据驱动的架构模式，它的UI和数据是分离的，所有的页面更新，都需要通过对数据的更改来实现。</p>
+      <p>小程序分为两个部分webview和appService。其中webview主要用来展现UI，appService有来处理业务逻辑. 数据及接口调用。它们在两个进程中运行，通过系统层JSBridge实现通信，实现UI的渲染.
+        事件的处理</p>
+
+    </details>
+
+
+    <details>
+      <summary>7. 分析下微信小程序的优劣势？</summary>
+
+
+      参考答案：
+
+     <p> 优势：
+
+      1. 无需下载，通过搜索和扫一扫就可以打开。<br>
+
+      2. 良好的用户体验：打开速度快。<br>
+
+      3. 开发成本要比App要低。<br>
+
+      4. 安卓上可以添加到桌面，与原生App差不多。<br>
+
+      5. 为用户提供良好的安全保障。小程序的发布，微信拥有一套严格的审查流程， 不能通过审查的小程序是无法发布到线上的。</p>
+
+      劣势：<br>
+
+      1. 限制较多。页面大小不能超过1M。不能打开超过5个层级的页面。<br>
+
+      2. 样式单一。小程序的部分组件已经是成型的了，样式不可以修改。例如：幻灯片. 导航。<br>
+
+      3. 推广面窄，不能分享朋友圈，只能通过分享给朋友，附近小程序推广。其中附近小程序也受到微信的限制。<br>
+
+      4. 依托于微信，无法开发后台管理功能。<br>
+
+    </details>
+
+
+    <details>
+      <summary>8. 微信小程序与H5的区别？</summary>
+
+
+      参考答案：<br>
+
+      第一条是运行环境的不同<br>
+
+      传统的HTML5的运行环境是浏览器，包括webview，而微信小程序的运行环境并非完整的浏览器，是微信开发团队基于浏览器内核完全重构的一个内置解析器，针对小程序专门做了优化，配合自己定义的开发语言标准，提升了小程序的性能。<br>
+
+      第二条是开发成本的不同<br>
+
+      只在微信中运行，所以不用再去顾虑浏览器兼容性，不用担心生产环境中出现不可预料的奇妙BUG <br>
+
+      第三条是获取系统级权限的不同<br>
+
+      系统级权限都可以和微信小程序无缝衔接<br>
+
+      第四条便是应用在生产环境的运行流畅度<br>
+
+      长久以来，当HTML5应用面对复杂的业务逻辑或者丰富的页面交互时，它的体验总是不尽人意，需要不断的对项目优化来提升用户体验。但是由于微信小程序运行环境独立<br>
+
+    </details>
+
+    <details>
+      <summary>10. 小程序的双向绑定和vue哪里不一样？</summary>
+
+
+      参考答案：小程序直接this. data的属性是不可以同步到视图的，必须调用<br>
+
+      ```js<br>
+      this.setData({<br>
+      noBind: true<br>
+      })<br>
+      ```<br>
+
+    </details>
+
+
+    <details>
+      <summary>11. 小程序的wxss和css有哪些不一样的地方？</summary>
+
+
+      参考答案：
+
+      一.wxss的图片引入需使用外链地址；<br>
+
+      二. 没有Body, 样式可直接使用import导入；<br>
+
+    </details>
+
+
+    <details>
+      <summary>12.webview中的页面怎么跳回小程序中？</summary>
+
+
+      参考答案：<br>首先要引入最新版的jweixin-1. 3. 2. js，然后<br>
+
+      ```js<br>
+      wx.miniProgram.navigateTo({<br>
+      url: '/pages/login/login' + '$params'<br>
+      })<br>
+      ```
+
+    </details>
+
+
+    <details>
+      <summary>13. 小程序关联微信公众号如何确定用户的唯一性？</summary>
+
+
+      参考答案：使用wx. getUserInfo方法withCredentials为 true 时 可获取encryptedData，里面有 union_id。后端需要进行对称解密
+
+    </details>
+
+
+    <details>
+      <summary>14. 如何实现下拉刷新？</summary>
+
+
+      参考答案：用view代替scroll-view, , 设置onPullDownRefresh函数实现
+
+    </details>
+
+
+    <details>
+      <summary>15. 使用webview直接加载要注意哪些事项？</summary>
+
+
+      参考答案：<br>
+
+      一. 必须要在小程序后台使用管理员添加业务域名；<br>
+
+      二.h5页面跳转至小程序的脚本必须是1. 3. 1以上；<br>
+
+      三. 微信分享只可以都是小程序的主名称了，如果要自定义分享的内容，需小程序版本在1. 7. 1以上；<br>
+
+      四.h5的支付不可以是微信公众号的appid，必须是小程序的appid，而且用户的openid也必须是用户和小程序的。<br>
+
+    </details>
+
+
+    <details>
+      <summary>16. 小程序调用后台接口遇到哪些问题？</summary>
+
+
+      参考答案：<br>
+
+      一. 数据的大小有限制，超过范围会直接导致整个小程序崩溃，除非重启小程序；<br>
+
+      二.
+      小程序不可以直接渲染文章内容页这类型的html文本内容，若需显示要借住插件，但插件渲染会导致页面加载变慢，所以最好在后台对文章内容的html进行过滤，后台直接处理批量替换p标签div标签为view标签，然后其它的标签让插件来做，减轻前端的时间。
+
+    </details>
+
+
+    <details>
+      <summary>17.webview的页面怎么跳转到小程序导航的页面？</summary>
+
+
+      参考答案：<br>小程序导航的页面可以通过switchTab，但默认情况是不会重新加载数据的。<br>
+      若需加载新数据，则在success属性中加入以下代码即可：<br>
+
+      ```js<br>
+      success: function(e) {<br>
+      var page = getCurrentPages().pop();<br>
+      if (page == undefined || page == null) return;<br>
+      page.onLoad();<br>
+      }<br>
+      ```
+
+      webview的页面，则通过<br>
+
+      ```js<br>
+      wx.miniProgram.switchTab({<br>
+      url: '/pages/index/index'<br>
+      })<br>
+      ```<br>
+
+    </details>
+
+
+    <details>
+      <summary>18. 小程序和Vue写法的区别？</summary>
+
+
+      参考答案：
+<br>
+      一. 循环遍历的时候：小程序是wx:for="list"，而Vue是v-for="(item, index) in list"<br>
+
+      二. 调用data模型的时候：小程序是this. data. uinfo，而Vue是this. uinfo；给模型赋值也不一样，小程序是this. setData({uinfo:1})，而Vue是直接this.<br>
+      uinfo=1
+
+    </details>
+
+
+    <details>
+      <summary>19. 小程序生命周期</summary>
+
+
+      参考答案：<br>
+
+      ```js<br>
+      // app.js<br>
+      App({<br>
+      onLaunch(options) {<br>
+      // Do something initial when launch.<br>
+      },<br>
+      onShow(options) {<br>
+      // Do something when show.<br>
+      },<br>
+      onHide() {<br>
+      // Do something when hide.<br>
+      },<br>
+      onError(msg) {<br>
+      console.log(msg)<br>
+      },<br>
+      globalData: 'I am global data'<br>
+      })<br>
+      ```
+
+      ```js<br>
+      //index.js<br>
+      Page({<br>
+      data: {<br>
+
+      text: "This is page data."<br>
+
+      },<br>
+      onLoad: function(options) {<br>
+
+      // 页面创建时执行<br>
+
+      },<br>
+      onShow: function() {<br>
+
+      // 页面出现在前台时执行<br>
+
+      },<br>
+      onReady: function() {<br>
+
+      // 页面首次渲染完毕时执行<br>
+
+      },<br>
+      onHide: function() {<br>
+
+      // 页面从前台变为后台时执行<br>
+
+      },<br>
+      onUnload: function() {<br>
+
+      // 页面销毁时执行<br>
+
+      },<br>
+      onPullDownRefresh: function() {<br>
+
+      // 触发下拉刷新时执行<br>
+
+      },<br>
+      onReachBottom: function() {<br>
+
+      // 页面触底时执行<br>
+
+      },<br>
+      onShareAppMessage: function () {<br>
+
+      // 页面被用户分享时执行<br>
+
+      },<br>
+      onPageScroll: function() {<br>
+
+      // 页面滚动时执行<br>
+
+      },<br>
+      onResize: function() {<br>
+
+      // 页面尺寸变化时执行<br>
+
+      },<br>
+      onTabItemTap(item) {<br>
+
+      // tab 点击时执行<br>
+      console.log(item.index)<br>
+      console.log(item.pagePath)<br>
+      console.log(item.text)<br>
+
+      },<br>
+      // 事件响应函数<br>
+      viewTap: function() {<br>
+
+      this.setData({<br>
+      text: 'Set some data for updating view.'<br>
+      }, function() {<br>
+      // this is setData callback<br>
+      })<br>
+      },<br>
+      // 自由数据<br>
+      customData: {<br>
+
+      hi: 'MINA'<br>
+
+      }<br>
+      })<br>
+      ```
+
+      ![页面 Page 实例的生命周期](../images/miniProgram_001.png)<br>
+
+    </details>
+
+
+    <details>
+      <summary>20. h5页面如何传递参数给小程序？</summary>
+
+
+      参考答案：<br>
+
+      ```
+      1、H5页面<br>
+
+      wx.miniProgram.postMessage({<br>
+      data: {<br>
+      shareUrl:href<br>
+      }<br>
+      });<br>
+
+      注意：传参必须使用data<br>
+
+      2、小程序页面接收<br>
+
+      Page({<br>
+      //获取H5传给小程序的参数<br>
+      getMessage: function(e) {<br>
+      if (!e.detail) {<br>
+      return<br>
+      }<br>
+      var datas = e.detail.data<br>
+      var shareUrl = datas.shareUrl;<br>
+      }<br>
+      })<br>
+
+      index.wxml文件<br>
+      ```
+
+    </details>
+
+    <details>
+      <summary>21. 微信小程序中父子组件如何相互传值？</summary>
+      <p> 参考答案：<br><br>1、在小程序中，父子组件之间可以通过属性和事件来进行相互传值。<br><br>父组件向子组件传值：使用属性
+        在父组件中引入子组件时，可以通过属性向子组件传递值。在子组件中使用 properties 属性来定义接收属性值的变量，示例代码如下：
+
+        父组件 parent.wxml：<br>
+
+
+        <child message="{{msg}}"></child><br>
+        子组件 child.wxml：<br>
+
+
+        <view>{{message}}</view><br>
+        子组件 child.js：<br>
+
+        JAVASCRIPT<br>
+        Component({<br>
+        properties: {<br>
+        message: String<br>
+        }<br>
+        })<br>
+        在父组件的 parent.js 中，我们可以通过在 data 中定义 msg 变量并赋值，即可向子组件传递值。<br>
+
+        JAVASCRIPT<br>
+        Page({<br>
+        data: {<br>
+        msg: 'Hello World!'<br>
+        }<br>
+        })<br>
+      </p>
+      <p>2、子组件向父组件传值：使用事件<br>
+        在子组件中，我们可以定义一个事件，通过该事件向父组件发送数据。在定义事件时，我们可以使用 this.triggerEvent() 方法向父组件发送数据。示例代码如下：<br>
+
+        父组件 parent.wxml：<br>
+        <child bind:customEvent="handleEvent"></child><br>
+
+        子组件 child.wxml：<br>
+        <button bindtap="handleClick">发送数据</button><br>
+
+        子组件 child.js：<br>
+        JAVASCRIPT<br>
+
+        Component({<br>
+        methods: {<br>
+        handleClick() {<br>
+        const data = {<br>
+        name: '小明',<br>
+        age: 18<br>
+        };<br>
+        this.triggerEvent('customEvent', data);<br>
+        }<br>
+        }<br>
+        })<br>
+        在上述代码中，我们定义了一个名为 customEvent 的事件，并在按钮的点击事件中使用 triggerEvent() 方法触发这个事件，并传递了一个对象 {name: '小明', age: 18}。<br>
+
+        在父组件中，我们可以在事件中接收子组件传递的数据，并在事件处理函数中进行相应的处理。父组件 parent.js 中的示例代码如下：<br>
+
+        JAVASCRIPT<br>
+        Page({<br>
+        handleEvent(e) {<br>
+        console.log(e.detail);<br>
+        }<br>
+        })<br>
+        在上述代码中，我们通过 e.detail 获取子组件传递的数据，并在控制台中打印该数据。<br>
+      </p>
+    </details>
+
+    <details>
+      <summary>22. 怎么解决小程序的异步请求问题?</summary>
+      <p>
+        参考答案：1）小程序支持大部分 ES6 语法
+        2）在返回成功的回调里面处理逻辑Promise异步</p>
+      <p>参考答案：
+
+        在回调函数中调用下一个组件的函数：<br>
+
+        app. js<br>
+
+        ```js<br>
+        success: function(info) {<br>
+        that.apirtnCallback(info)<br>
+        }<br>
+        ```
+
+        index. js<br>
+<br>
+        ```js<br>
+        onLoad: function() {<br>
+        app.apirtnCallback = res => {<br>
+        console.log(res)<br>
+        }<br>
+        }<br>
+        ```</p>
+    </details>
+
+
+    <details>
+      <summary>23. 如何实现下拉刷新?</summary>
+      <p>
+        参考答案：<br>1. 首先在全局 config 中的 window配置 enablePullDownRefresh<br>
+
+        2. 在 Page 中定义onPullDownRefresh 钩子函数,到达下拉刷新条件后, 该钩子函数执行, 发起请求方法<br>
+
+        3. 请求返回后，调用wx.stopPullDownRefresh停止下拉刷新<br></p>
+    </details>
+
+    <details>
+      <summary>24. bindtap和catchtap的区别是什么?</summary>
+      <p>
+        参考答案：<br><br>1. 相同点：首先他们都是作为点击事件函数，就是点击时触发。在这个作用上他们是一样的，可以不做区分<br><br>
+
+        2. 不同点：他们的不同点主要是bindtap是不会阻止冒泡事件的，catchtap是阻值冒泡的<br><br></p>
+    </details>
+
+    <details>
+      <summary>25. 小程序页面间有哪些传递数据的方法?</summary>
+      <p>
+        参考答案：<br> 1. 使用全局变量实现数据传递。在 app.js 文件中定义全局变量 globalData， 将需要存储的信息存放在里面<br>
+        2. 使用 wx.navigateTo与 wx.redirectTo 的时候，可以将部分数据放在 url 里面，并在新页面onLoad的时候初始化<br>
+        3. 使用本地缓存Storage 相关</p>
+    </details>
+
+
+    <details>
+      <summary>26. 小程序简单介绍下三种事件对象的属性列表？</summary>
+      <p>
+        参考答案：<br> 1. 基础事件（BaseEvent）<br>
+
+        1) type:事件类型<br>
+
+        2) timeStamp：事件生成时的时间戳<br>
+
+        3) target：触发事件的组件的属性值集合<br>
+
+        4) currentTarget：当前组件的一些属性集合<br>
+
+        2. 自定义事件（CustomEvent）<br>
+<br>
+        1) detail<br>
+
+        3. 触摸事件（TouchEvent）<br>
+
+        1) touches<br>
+
+        2) changedTouches</p><br>
+    </details>
+
+    <details>
+      <summary>27. 小程序对wx:if 和 hidden使用的理解？</summary>
+      <p>
+        参考答案：<br> 1. wx:if有更高的切换消耗。<br>
+        2. hidden 有更高的初始渲染消耗。<br><br>
+        因此，如果需要频繁切换的情景下，用 hidden 更好，如果在运行时条件不大可能改变则wx:if 较好。</p>
+    </details>
+
+    <details>
+      <summary>28. app.json 是对当前小程序的全局配置，讲述三个配置各个项的含义？</summary>
+      <p>
+        参考答案：<br> 1. pages字段 —— 用于描述当前小程序所有页面路径，这是为了让微信客户端知道当前你的小程序页面定义在哪个目录。<br>
+        2. window字段 —— 小程序所有页面的顶部背景颜色，文字颜色定义在这里的<br>
+        3. tab字段—小程序全局顶部或底部tab<br></p>
+    </details>
+
+    <details>
+      <summary>29. 小程序运行机制?</summary>
+      <p> 参考答案：热启动 ：假如用户已经打开了某个小程序，在一定时间内再次打开小程序的话，这个时候我们就不再需要重新启动了，这需要把我们的后台打开的小程序切换到前台来使用。
+        冷启动：用户首次打开小程序或被微信主动销毁再次打开的情况，此时小程序需要重新加载启动。</p>
+    </details>
+
+    <details>
+      <summary>30. 如何封装小程序请求?</summary>
+      <p> 参考答案：封装 wx.request 请求传递需要的参数( url , data , method , success 成功回调 ， fail 失败回调 ) , 封装常用方法 POST , GET , DELETE ,
+        PUT .... 最后导出这些方法<br>
+
+        然后新建一个 api.js 文件，导入封装好的方法，然后调取相应的方法，传递数据。<br>
+
+
+        wx.request 封装<br>
+        var app = getApp(); //获取小程序全局唯一app实例<br>
+        var host = '******************'; //接口地址<br>
+
+
+
+        //POST请求<br>
+        function post(url, data, success,fail) {<br>
+        request(url, postData, "POST", doSuccess, doFail);<br>
+        }<br>
+
+        //GET请求<br>
+        function get(url, data, success, fail) {<br>
+        request(url, postData, "GET", doSuccess, doFail);<br>
+        }<br>
+
+        function request(url, data, method, success, fail) {<br>
+        wx.showLoading({<br>
+        title: "正在加载中...",<br>
+        })<br>
+        wx.request({<br>
+        url: host + url, //请求地址<br>
+        method: method, //请求方法<br>
+        header: { //请求头<br>
+        "Content-Type": "application/json;charset=UTF-8"<br>
+        },<br>
+        data: data, //请求参数<br>
+        dataType: 'json', //返回数据格式<br>
+        responseType: 'text', //响应的数据类型<br>
+        success: function(res) {<br>
+        wx.hideLoading();<br>
+        //成功执行方法，参数值为res.data,直接将返回的数据传入<br>
+        success(res.data);<br>
+        },<br>
+        fail: function() {<br>
+        //失败执行方法<br>
+        fail();<br>
+        },<br>
+        })<br>
+        }<br>
+        module.exports = {<br>
+        postRequest: post,<br>
+        getRequest: get,<br>
+        }<br>
+        组件使用 封装好的请求<br>
+        var http = require('../../utils/request.js'); //相对路径<br>
+
+
+        var params = {//请求参数<br>
+        id:this.data.userId<br>
+        }<br>
+        http.postRequest("user/delUser", params, function(res) {<br>
+        console.log("修改成功！");<br>
+
+        }, function(res) {<br>
+        console.log("修改失败！！！")<br>
+        })</p>
+    </details>
+
+    <details>
+      <summary>31. 简述下 `wx.navigateTo()`, `wx.redirectTo()`, `wx.switchTab()`, `wx.navigateBack()`, `wx.reLaunch()`的区别?
+      </summary>
+      <p>
+        参考答案：<br>wx.navigateTo()：保留当前页面，跳转到应用内的某个页面。但是不能跳到 tabbar 页面<br>
+        wx.redirectTo()：关闭当前页面，跳转到应用内的某个页面。但是不允许跳转到 tabbar 页面<br>
+        wx.switchTab()：跳转到 abBar 页面，并关闭其他所有非 tabBar 页面<br>
+        wx.navigateBack()关闭当前页面，返回上一页面或多级页面。可通过 getCurrentPages() 获取当前的页面栈，决定需要返回几层<br>
+        wx.reLaunch()：关闭所有页面，打开到应用内的某个页面<br></p>
+    </details>
+
+    <details>
+      <summary>32. 小程序开发中常用的ui框架?
+      </summary>
+      <p>
+       小程序开发中，我们通常会使用一些第三方 UI 组件库来满足界面开发需求。以下是几个比较流行的小程序 UI 组件库：<br>
+        WeUI for 小程序：腾讯出品的小程序 UI 组件库，包含大多数常用的UI组件，如按钮、输入框、列表等，而且还提供了一些常用的功能组件，如下拉刷新、提示框等。使用方便，只需要下载引入即可。<br>
+        ColorUI：潮流色彩快速上手，提供了近百种常用UI组件，包含字体图标、布局、表单、操作反馈等方面，自定义样式支持度很高，样式精美。<br>
+        Uni-app UI：DCloud开发的Uniapp框架中自带的基于Vue的组件库，支持多端，包括小程序等，它采用了模块化、自定义主题和可配置的体验指南，提供了很好的开发体验和界面展示效果。<br>
+        Vant Weapp：有赞前端团队开发的ui组件库，源于Vant组件库，与Vue生态风格相似，拓展的组件较全面，包括常用的布局、操作、表单等功能，支持成熟的自定义主题，并持续更新维护。<br>
+        MinUI：又称蘑菇街UI组件库，是一款基于自定义组件的组件库，开发简单，提供了大量的自定义组件，适用于快速开发各种小程序。<br>
+        以上是一些常用的小程序UI组件库，实际使用中可以根据需求进行选择，如果以上组件库都无法满足开发需求，还可以使用自定义组件进行开发定制化的UI。<br></p>
+    </details>
+
+    <details>
+      <summary>32. 小程序开发中常用的ui组件?
+      </summary>
+      <p>
+        UI组件是指图形用户界面（Graphical User Interface, GUI）中的一些可重用元素，例如按钮，输入框等。在前端开发中，UI组件可以是代码封装的一些可重用的模块，也可以是UI库提供的成套的UI组件，使用它们可以快速搭建出复杂的用户界面。<br>
+        以下是一些常见的UI组件：<br>
+        按钮(Button)：包含普通按钮、带图标按钮、文本按钮等多种类型。<br>
+        表单(Form)：包括输入框、单选框、多选框、下拉框等。<br>
+        列表(List)：常见功能单元，可以列表展示数据，常见的列表有相关的交互操作例如滑动删除、下拉刷新、上拉加载。<br>
+        轮播图(Carousel)：通过轮播的方式，展示多张图片或卡片内容。<br>
+        侧边栏(Sidebar)：可以从侧边或者下方弹出，展示多个导航菜单项。<br>
+        模态框(Modals)：弹出一个层级较高的对话框，覆盖在当前页面之上，通常用于用户操作提示或者信息确认。<br>
+        选项卡(Tabs)：根据不同的选项卡切换展示不同的内容。<br>
+        菜单(Menu)：提供多个选项进行导航。<br>
+        分页(Pagination)：将内容分页展示，用户可以进行翻页浏览。<br>
+        还有很多其它的UI组件，不同的UI组件库提供的组件会有所不同，可以根据具体开发需求选择适合的UI组件。<br></p>
+    </details>
+  </div>
+</body>
+
+</html>

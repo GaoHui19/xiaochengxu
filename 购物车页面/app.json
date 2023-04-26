@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "pages/shopcart/shopcart",
+    "pages/jiesuan/jiesuan"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "购物车",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
